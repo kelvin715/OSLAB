@@ -134,6 +134,9 @@
 #define __NR_sem_post	74
 #define __NR_sem_unlink 75
 
+#define __NR_shmget 76
+#define __NR_shmat 77
+
 #define QUE_LEN 16
 #define SEM_FAILED  (void*) 0
 struct semaphore_queue
@@ -152,6 +155,9 @@ struct semaphore_t
     struct semaphore_queue wait_queue;
 };
 typedef struct semaphore_t sem_t;
+
+typedef int key_t;
+
  
 #define _syscall0(type,name) \
 type name(void) \
